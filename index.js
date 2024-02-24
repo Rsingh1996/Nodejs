@@ -113,3 +113,19 @@ largestOfFour([
 //   [32, 35, 97, 39],
 //   [1000000, 1001, 857, 1],
 // ]);
+
+/* Confirm the Ending
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+*/
+
+function confirmEnding(str, target) {
+  //   let result = str.endsWith(target) ? true : false;
+  let targetLength = target.length;
+  let strLength = str.length;
+  let result =
+    str.substring(strLength - targetLength, strLength) === target
+      ? true
+      : false;
+  return result;
+}
+console.log(confirmEnding("Hello world", "world"));
