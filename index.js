@@ -181,3 +181,15 @@ function findElement(arr, func) {
 }
 
 console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
+
+function myFilter(arr, func) {
+  let filterdArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+      filterdArray.push(arr[i]);
+    }
+  }
+  return filterdArray;
+}
+
+console.log(myFilter([1, 2, 3, 4], (num) => num % 2 === 0));
