@@ -182,6 +182,7 @@ function findElement(arr, func) {
 
 console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
 
+// Custom filter function HOF
 function myFilter(arr, func) {
   let filterdArray = [];
   for (let i = 0; i < arr.length; i++) {
@@ -193,3 +194,15 @@ function myFilter(arr, func) {
 }
 
 console.log(myFilter([1, 2, 3, 4], (num) => num % 2 === 0));
+
+// Custom map function HOF
+
+function myMap(arr, func) {
+  let mappedArray = [];
+  for (let i in arr) {
+    mappedArray.push(func(arr[i]));
+  }
+  return mappedArray;
+}
+
+console.log(myMap([1, 2, 3, 4], (num) => (num = num * 3)));
