@@ -265,4 +265,4 @@ function sumAll(arr) {
   return sum;
 }
 
-console.log(sumAll([1, 4]));
+console.log("sum :", sumAll([1, 4]));
