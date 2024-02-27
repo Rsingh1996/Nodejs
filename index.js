@@ -242,3 +242,27 @@ function titleCase(str) {
 
 console.log(titleCase("I'm a little tea pot"));
 console.log(titleCase("sHoRt AnD sToUt"));
+
+/*
+Sum All Numbers in a Range
+We'll pass you an array of two numbers. 
+Return the sum of those two numbers plus the sum of all the numbers between them. 
+The lowest number will not always come first.
+
+*/
+
+function sumAll(arr) {
+  let sum = 0;
+  if (arr[0] < arr[1]) {
+    for (let i = arr[0]; i <= arr[1]; i++) {
+      sum += i;
+    }
+  } else if (arr[0] > arr[1]) {
+    for (let i = arr[1]; i <= arr[0]; i++) {
+      sum += i;
+    }
+  } else sum += arr[0];
+  return sum;
+}
+
+console.log(sumAll([1, 4]));
