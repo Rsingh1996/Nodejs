@@ -46,6 +46,19 @@ function rightTrianglePattern(num) {
 }
 rightTrianglePattern(5);
 
+function leftTrianglePattern(num) {
+  let string = "";
+  for (let i = 0; i <= num; i++) {
+    for (let k = 0; k < i; k++) {
+      string += "*";
+    }
+    string += "\n";
+  }
+  console.log(string);
+  return string;
+}
+leftTrianglePattern(5);
+
 function pyramidStarPattern(num) {
   let string = "";
   for (let i = 1; i <= num; i++) {
