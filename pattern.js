@@ -44,7 +44,7 @@ function rightTrianglePattern(num) {
   console.log(string);
   return string;
 }
-rightTrianglePattern(6);
+rightTrianglePattern(5);
 
 function pyramidStarPattern(num) {
   let string = "";
@@ -57,7 +57,33 @@ function pyramidStarPattern(num) {
     }
     string += "\n";
   }
+
   console.log(string);
   return string;
 }
 pyramidStarPattern(5);
+
+function diamondStarPattern(num) {
+  let string = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = num - i; j >= 1; j--) {
+      string += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      string += "*";
+    }
+    string += "\n";
+  }
+  for (let i = num - 1; i >= 1; i--) {
+    for (let j = num - i; j >= 1; j--) {
+      string += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      string += "*";
+    }
+    string += "\n";
+  }
+  console.log(string);
+  return string;
+}
+diamondStarPattern(5);
