@@ -285,3 +285,13 @@ function diffArray(arr1, arr2) {
 }
 
 diffArray([1, 2, 3, 5], [1, 2, 7, 3, 4, 5]);
+
+// Remove duplicate from array
+
+function removeDulicate(arr) {
+  let uniqueItem = arr.filter((item, index) => arr.indexOf(item) === index);
+  console.log(uniqueItem);
+  return uniqueItem;
+}
+
+removeDulicate([1, 2, 2, 3, 4, 5, 2, 5]);
