@@ -57,7 +57,7 @@ function leftTrianglePattern(num) {
   console.log(string);
   return string;
 }
-leftTrianglePattern(5);
+leftTrianglePattern(6);
 
 function pyramidStarPattern(num) {
   let string = "";
@@ -99,4 +99,17 @@ function diamondStarPattern(num) {
   console.log(string);
   return string;
 }
-diamondStarPattern(5);
+diamondStarPattern(6);
+
+function downwardLeftTrianglePattern(num) {
+  let string = "";
+  for (let i = 0; i <= num; i++) {
+    for (let k = num; k > i; k--) {
+      string += "*";
+    }
+    string += "\n";
+  }
+  console.log(string);
+  return string;
+}
+downwardLeftTrianglePattern(6);

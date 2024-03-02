@@ -303,7 +303,6 @@ Remove all elements from the initial array that are of the same value as these a
 
 The function must accept an indeterminate number of arguments, also known as a variadic function. 
 You can access the additional arguments by adding a rest parameter to the function definition or using the arguments object.
-
 */
 
 function destroyer(arr, ...rest) {
