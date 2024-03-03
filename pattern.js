@@ -145,14 +145,10 @@ function hollowDiamondStarPattern(num) {
       string += " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (k === 1) {
+      if (k === 1 || k === 2 * i - 1) {
         string += "*";
       } else {
-        if (k === 1 || k === 2 * i - 1) {
-          string += "*";
-        } else {
-          string += " ";
-        }
+        string += " ";
       }
     }
     string += "\n";
@@ -162,14 +158,10 @@ function hollowDiamondStarPattern(num) {
       string += " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (k === 1) {
+      if (k === 1 || k === 2 * i - 1) {
         string += "*";
       } else {
-        if (k === 1 || k === 2 * i - 1) {
-          string += "*";
-        } else {
-          string += " ";
-        }
+        string += " ";
       }
     }
     string += "\n";
