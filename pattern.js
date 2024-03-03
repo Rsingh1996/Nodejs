@@ -137,3 +137,44 @@ function hollowPyramidStarPattern(num) {
   return string;
 }
 hollowPyramidStarPattern(5);
+
+function hollowDiamondStarPattern(num) {
+  let string = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = num - i; j >= 1; j--) {
+      string += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (k === 1) {
+        string += "*";
+      } else {
+        if (k === 1 || k === 2 * i - 1) {
+          string += "*";
+        } else {
+          string += " ";
+        }
+      }
+    }
+    string += "\n";
+  }
+  for (let i = num - 1; i >= 1; i--) {
+    for (let j = num - i; j >= 1; j--) {
+      string += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (k === 1) {
+        string += "*";
+      } else {
+        if (k === 1 || k === 2 * i - 1) {
+          string += "*";
+        } else {
+          string += " ";
+        }
+      }
+    }
+    string += "\n";
+  }
+  console.log(string);
+  return string;
+}
+hollowDiamondStarPattern(6);
