@@ -113,3 +113,27 @@ function downwardLeftTrianglePattern(num) {
   return string;
 }
 downwardLeftTrianglePattern(6);
+
+function hollowPyramidStarPattern(num) {
+  let string = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = num - i; j >= 1; j--) {
+      string += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num) {
+        string += "*";
+      } else {
+        if (k === 1 || k === 2 * i - 1) {
+          string += "*";
+        } else {
+          string += " ";
+        }
+      }
+    }
+    string += "\n";
+  }
+  console.log(string);
+  return string;
+}
+hollowPyramidStarPattern(5);
