@@ -347,3 +347,10 @@ function sumPrimes(num) {
 }
 
 sumPrimes(10);
+
+const firstname = fun();
+var userName = `vivek`;
+function fun() {
+  return `my is ${userName} malviya`;
+}
+console.log(firstname);
