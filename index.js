@@ -185,7 +185,7 @@ console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
 // Custom filter function HOF
 function myFilter(arr, func) {
   let filterdArray = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i in arr) {
     if (func(arr[i])) {
       filterdArray.push(arr[i]);
     }
