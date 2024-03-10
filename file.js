@@ -1,3 +1,3 @@
 let file = require("./app");
 
-console.log(file);
+console.log(file.foo());
