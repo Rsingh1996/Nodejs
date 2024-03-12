@@ -1,3 +1,6 @@
+let chalk = require("chalk");
+console.log(chalk.blue("Hello world!"));
+
 // Sum of N Number
 
 function sunOfNNumbers(...arg) {
