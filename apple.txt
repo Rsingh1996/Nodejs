@@ -1,0 +1,1 @@
+apple is added from CLI, apple is a healty fruit
