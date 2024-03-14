@@ -28,5 +28,5 @@ for (let i = 1; i <= 5; i++) {
 // Reading list of item/files from a folder/dir
 
 fs.readdir(dirPath, (err, files) => {
-  console.log(files);
+  files.forEach((item) => console.log(item));
 });
