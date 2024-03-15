@@ -7,6 +7,13 @@ const filePath = `${dirPath}/newFile.txt`;
 // fs.writeFileSync(filePath, "This is a new file to perfomr curn operations");
 
 // reading file content
-fs.readFile(filePath, "utf-8", (err, item) => {
-  console.log(item);
+// fs.readFile(filePath, "utf-8", (err, item) => {
+//   console.log(item);
+// });
+
+// updating file content
+fs.appendFile(filePath, ", This operations help in file handling", (err) => {
+  if (!err) {
+    console.log("File is update!");
+  }
 });
