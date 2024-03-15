@@ -3,4 +3,10 @@ const path = require("path");
 const dirPath = path.join(__dirname, "curd");
 const filePath = `${dirPath}/newFile.txt`;
 
-fs.writeFileSync(filePath, "This is a new file to perfomr curn operations");
+// createing file
+// fs.writeFileSync(filePath, "This is a new file to perfomr curn operations");
+
+// reading file content
+fs.readFile(filePath, "utf-8", (err, item) => {
+  console.log(item);
+});
