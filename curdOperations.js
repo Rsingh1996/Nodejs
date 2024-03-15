@@ -12,8 +12,15 @@ const filePath = `${dirPath}/newFile.txt`;
 // });
 
 // updating file content
-fs.appendFile(filePath, ", This operations help in file handling", (err) => {
+// fs.appendFile(filePath, ", This operations help in file handling", (err) => {
+//   if (!err) {
+//     console.log("File is update!");
+//   }
+// });
+
+// Rename the file name
+fs.rename(filePath, `${dirPath}/renamedFile.txt`, (err) => {
   if (!err) {
-    console.log("File is update!");
+    console.log("file renamed!");
   }
 });
