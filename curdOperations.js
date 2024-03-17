@@ -19,8 +19,11 @@ const filePath = `${dirPath}/newFile.txt`;
 // });
 
 // Rename the file name
-fs.rename(filePath, `${dirPath}/renamedFile.txt`, (err) => {
-  if (!err) {
-    console.log("file renamed!");
-  }
-});
+// fs.rename(filePath, `${dirPath}/renamedFile.txt`, (err) => {
+//   if (!err) {
+//     console.log("file renamed!");
+//   }
+// });
+
+// delation of file
+fs.unlinkSync(`${dirPath}/renamedFile.txt`);

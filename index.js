@@ -1,6 +1,3 @@
-let chalk = require("chalk");
-console.log(chalk.blue("Hello world!"));
-
 // Sum of N Number
 
 function sunOfNNumbers(...arg) {
@@ -357,3 +354,22 @@ function fun() {
   return `my is ${userName} malviya`;
 }
 console.log(firstname);
+
+// Question on Async
+
+let a = 10;
+let b = 5;
+
+// setTimeout(() => {
+//   let b = 10;
+// }, 1000);
+
+let awaitedData = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let b = 10;
+    resolve(b);
+  }, 1000);
+});
+awaitedData.then((b) => {
+  console.log("sum of a+b :", a + b); // required answer - 20
+});
