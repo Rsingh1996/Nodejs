@@ -364,12 +364,21 @@ let b = 5;
 //   let b = 10;
 // }, 1000);
 
-let awaitedData = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    let b = 10;
-    resolve(b);
-  }, 1000);
-});
-awaitedData.then((b) => {
-  console.log("sum of a+b :", a + b); // required answer - 20
-});
+// let awaitedData = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let b = 10;
+//     resolve(b);
+//   }, 1000);
+// });
+// awaitedData.then((b) => {
+//   console.log("sum of a+b :", a + b); // required answer - 20
+// });
+
+console.log("Starting up"); // 1
+setTimeout(() => {
+  console.log("2 second log"); //4
+}, 2000);
+setTimeout(() => {
+  console.log("0 second log"); //3
+}, 0);
+console.log("Finishing up"); // 2
