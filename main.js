@@ -3,6 +3,7 @@ const PORT = 4000;
 const app = express();
 
 app.get("", (request, response) => {
+  console.log(`data sent by clint/browser  -->`, request.query.name);
   response.send("Hello from home page!");
 });
 app.get("/about", (request, response) => {
