@@ -4,10 +4,14 @@ const app = express();
 
 app.get("", (request, response) => {
   console.log(`data sent by clint/browser  -->`, request.query.name);
-  response.send("Hello from home page!");
+  //   response.send(`<h1>Hello ${request.query.name}</h1>`);
+  response.send(`<h2>Welcome on home page!</h2>`);
 });
 app.get("/about", (request, response) => {
-  response.send("Hello from about page!");
+  response.send(`
+  <input type="text" placeholder="username" />
+  <buuton>Click me</button>
+  `);
 });
 app.get("/help", (request, response) => {
   response.send("Hello from help page!");
