@@ -355,7 +355,7 @@ function fun() {
 }
 console.log(firstname);
 
-// Question on Async
+// Question on Async data handling in nodejs
 
 let a = 10;
 let b = 5;
