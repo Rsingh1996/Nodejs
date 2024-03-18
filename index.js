@@ -1,3 +1,15 @@
+// iterate though object
+
+var skill = {
+  company: "js",
+  city: "Noida",
+  state: "UP",
+};
+
+for (let i in skill) {
+  console.log(`${i} : ${skill[i]}`);
+}
+
 // Sum of N Number
 
 function sunOfNNumbers(...arg) {
