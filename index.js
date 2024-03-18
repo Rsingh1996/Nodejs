@@ -10,6 +10,23 @@ for (let i in skill) {
   console.log(`${i} : ${skill[i]}`);
 }
 
+// doubleNumber using while
+
+let numArray = [21, 22, 12, 22, 34, 12, 23];
+
+function doubleNumber(arr) {
+  let lenthOfArray = arr.length;
+  console.log(lenthOfArray);
+  let count = 0;
+  let newArr = [];
+  while (count < lenthOfArray) {
+    newArr[count] = arr[count] * 2;
+    count++;
+  }
+  return newArr;
+}
+console.log(doubleNumber(numArray));
+
 // Sum of N Number
 
 function sunOfNNumbers(...arg) {
