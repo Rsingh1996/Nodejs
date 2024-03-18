@@ -14,7 +14,36 @@ app.get("/about", (request, response) => {
   `);
 });
 app.get("/help", (request, response) => {
-  response.send("Hello from help page!");
+  response.send([
+    {
+      user: `Rahul`,
+      email: `rahul@gmail.com`,
+    },
+    {
+      user: `Ankit`,
+      email: `ankit@gmail.com`,
+    },
+    {
+      user: `Chandan`,
+      email: `chandan@gmail.com`,
+    },
+    {
+      user: `Amit`,
+      email: `amit@gmail.com`,
+    },
+    {
+      user: `Peter`,
+      email: `peter@gmail.com`,
+    },
+    {
+      user: `Sam`,
+      email: `peter@gmail.com`,
+    },
+    {
+      user: `Jack`,
+      email: `jack@gmail.com`,
+    },
+  ]);
 });
 ///////////////// Server creation ////////////////////////////////
 
