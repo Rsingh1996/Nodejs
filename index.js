@@ -16,7 +16,7 @@ let numArray = [21, 22, 12, 22, 34, 12, 23];
 
 function doubleNumber(arr) {
   let lenthOfArray = arr.length;
-  console.log(lenthOfArray);
+  // console.log(lenthOfArray);
   let count = 0;
   let newArr = [];
   while (count < lenthOfArray) {
@@ -26,6 +26,11 @@ function doubleNumber(arr) {
   return newArr;
 }
 console.log(doubleNumber(numArray));
+
+let removedarray = new Set(numArray);
+console.log(...removedarray);
+// sorting of array
+console.log(numArray.sort());
 
 // Sum of N Number
 
