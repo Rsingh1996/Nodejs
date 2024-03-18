@@ -5,12 +5,14 @@ const app = express();
 app.get("", (request, response) => {
   console.log(`data sent by clint/browser  -->`, request.query.name);
   //   response.send(`<h1>Hello ${request.query.name}</h1>`);
-  response.send(`<h2>Welcome on home page!</h2>`);
+  response.send(`<h2>Welcome on home page!</h2>
+  <a href="/about">Go to about page</a>`);
 });
 app.get("/about", (request, response) => {
   response.send(`
   <input type="text" placeholder="username" />
-  <buuton>Click me</button>
+  <buuton>Click me</button> </br>
+  <a href="/">Go to home page</a>
   `);
 });
 app.get("/help", (request, response) => {
