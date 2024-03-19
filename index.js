@@ -416,3 +416,13 @@ setTimeout(() => {
   console.log("0 second log"); //3
 }, 0);
 console.log("Finishing up"); // 2
+
+// Output bases quesyion
+const obj = {};
+let key = "constructor";
+if (key in obj) {
+  console.log("Key Found");
+} else {
+  console.log("Key not Found");
+}
+// we are getting out as key found to fic that we can use Object.hasOwn(obj, key)
