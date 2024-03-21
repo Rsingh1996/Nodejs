@@ -18,5 +18,8 @@ app.get("/about", (_, response) => {
 app.get("/contact", (_, response) => {
   response.sendFile(`${publicPath}/contact.html`);
 });
+app.get("/*", (_, response) => {
+  response.sendFile(`${publicPath}/404.html`);
+});
 
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
