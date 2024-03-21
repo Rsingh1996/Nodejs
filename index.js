@@ -426,3 +426,8 @@ if (key in obj) {
   console.log("Key not Found");
 }
 // we are getting out as key found to fic that we can use Object.hasOwn(obj, key)
+if (Object.hasOwn(obj, key)) {
+  console.log("Key Found");
+} else {
+  console.log("Key not Found");
+}
