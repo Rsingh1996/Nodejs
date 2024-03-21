@@ -5,6 +5,18 @@ const PORT = 8000;
 const app = express();
 const publicPath = path.join(__dirname, "public");
 
-app.use(express.static(publicPath));
+// app.use(express.static(publicPath)); // Used to redner static html page with extension
+
+// creating extension free pages
+
+app.get("/", (_, response) => {
+  response.sendFile(`${publicPath}/index.html`);
+});
+app.get("/about", (_, response) => {
+  response.sendFile(`${publicPath}/about.html`);
+});
+app.get("/contact", (_, response) => {
+  response.sendFile(`${publicPath}/contact.html`);
+});
 
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
