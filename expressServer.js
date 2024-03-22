@@ -22,7 +22,12 @@ app.get("/contact", (_, response) => {
   response.sendFile(`${publicPath}/contact.html`);
 });
 app.get("/profile", (_, response) => {
-  response.render("profile");
+  const user = {
+    userName: `Peter Sharpe`,
+    email: `peter@gmail.com`,
+    city: `Salt Lake City`,
+  };
+  response.render("profile", { user });
 });
 app.get("/*", (_, response) => {
   response.sendFile(`${publicPath}/404.html`);
