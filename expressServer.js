@@ -5,6 +5,9 @@ const PORT = 8000;
 const app = express();
 const publicPath = path.join(__dirname, "public");
 
+// initializing ejs template
+app.set("view engine", "ejs");
+
 // app.use(express.static(publicPath)); // Used to redner static html page with extension
 
 // creating extension free pages
@@ -17,6 +20,9 @@ app.get("/about", (_, response) => {
 });
 app.get("/contact", (_, response) => {
   response.sendFile(`${publicPath}/contact.html`);
+});
+app.get("/profile", (_, response) => {
+  response.render("profile");
 });
 app.get("/*", (_, response) => {
   response.sendFile(`${publicPath}/404.html`);
