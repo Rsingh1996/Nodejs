@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      input {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include(`common/header`) %>
+    <h1>This is a login Page</h1>
+    <input type="email" name="email" placeholder="email" /><br />
+    <input type="password" name="password" placeholder="password" /><br />
+    <button type="submit">Login</button>
+    <%- include(`common/footer`) %>
+  </body>
+</html>

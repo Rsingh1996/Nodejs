@@ -30,6 +30,10 @@ app.get("/profile", (_, response) => {
   };
   response.render("profile", { user });
 });
+
+app.get("/login", (_, response) => {
+  response.render("login");
+});
 app.get("/*", (_, response) => {
   response.sendFile(`${publicPath}/404.html`);
 });
