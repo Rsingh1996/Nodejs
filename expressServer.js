@@ -26,6 +26,7 @@ app.get("/profile", (_, response) => {
     userName: `Peter Sharpe`,
     email: `peter@gmail.com`,
     city: `Salt Lake City`,
+    skills: [`JavaScript`, `Python`, `Java`, `C`, `C++`, `NodeJS`],
   };
   response.render("profile", { user });
 });
