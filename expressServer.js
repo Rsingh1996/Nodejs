@@ -8,7 +8,7 @@ const publicPath = path.join(__dirname, "public");
 // initializing ejs template
 app.set("view engine", "ejs");
 
-// Creating middleware
+// Creating basic middleware
 const requestFilter = (req, resp, next) => {
   if (!req.query.age) {
     resp.send("<h2>Page not available</h2>");
@@ -19,7 +19,8 @@ const requestFilter = (req, resp, next) => {
   }
   console.log("requestFilter called");
 };
-app.use(requestFilter);
+// app.use(requestFilter); // Application level middleware
+
 // app.use(express.static(publicPath)); // Used to redner static html page with extension
 
 // creating extension free pages
@@ -43,7 +44,8 @@ app.get("/profile", (_, response) => {
   response.render("profile", { user });
 });
 
-app.get("/login", (_, response) => {
+app.get("/login", requestFilter, (_, response) => {
+  // route level middleware
   response.render("login");
 });
 app.get("/*", (_, response) => {
