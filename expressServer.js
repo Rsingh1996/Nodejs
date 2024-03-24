@@ -10,8 +10,14 @@ app.set("view engine", "ejs");
 
 // Creating middleware
 const requestFilter = (req, resp, next) => {
+  if (!req.query.age) {
+    resp.send("<h2>Page not available</h2>");
+  } else if (req.query.age > 18) {
+    resp.send("<h2>Page not accessible for age below 18</h2>");
+  } else {
+    next();
+  }
   console.log("requestFilter called");
-  next();
 };
 app.use(requestFilter);
 // app.use(express.static(publicPath)); // Used to redner static html page with extension
