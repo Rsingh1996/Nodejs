@@ -8,6 +8,12 @@ const publicPath = path.join(__dirname, "public");
 // initializing ejs template
 app.set("view engine", "ejs");
 
+// Creating middleware
+const requestFilter = (req, resp, next) => {
+  console.log("requestFilter called");
+  next();
+};
+app.use(requestFilter);
 // app.use(express.static(publicPath)); // Used to redner static html page with extension
 
 // creating extension free pages
