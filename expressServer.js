@@ -5,6 +5,7 @@ const requestFilter = require("./middleware");
 const PORT = 8000;
 const app = express();
 const publicPath = path.join(__dirname, "public");
+const route = express.Router();
 
 // initializing ejs template
 app.set("view engine", "ejs");
@@ -20,7 +21,10 @@ app.set("view engine", "ejs");
 //   }
 //   console.log("requestFilter called");
 // };
+
 // app.use(requestFilter); // Application level middleware
+
+route.use(requestFilter); // route level middleware instanse
 
 // app.use(express.static(publicPath)); // Used to redner static html page with extension
 
@@ -29,10 +33,10 @@ app.set("view engine", "ejs");
 app.get("/", (_, response) => {
   response.sendFile(`${publicPath}/index.html`);
 });
-app.get("/about", (_, response) => {
+route.get("/about", (_, response) => {
   response.sendFile(`${publicPath}/about.html`);
 });
-app.get("/contact", (_, response) => {
+route.get("/contact", (_, response) => {
   response.sendFile(`${publicPath}/contact.html`);
 });
 app.get("/profile", (_, response) => {
@@ -49,8 +53,10 @@ app.get("/login", requestFilter, (_, response) => {
   // route level middleware
   response.render("login");
 });
-app.get("/*", (_, response) => {
-  response.sendFile(`${publicPath}/404.html`);
-});
+// app.get("/*", (_, response) => {
+//   response.sendFile(`${publicPath}/404.html`);
+// });
+
+app.use("/", route);
 
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
