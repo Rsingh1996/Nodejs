@@ -1,15 +1,28 @@
 const express = require("express");
 const path = require("path");
 const requestFilter = require("./middleware");
-
+const { MongoClient } = require("mongodb");
+const url = "mongodb://localhost:27017";
 const PORT = 8000;
 const app = express();
 const publicPath = path.join(__dirname, "public");
 const route = express.Router();
 
+const clint = new MongoClient(url);
 // initializing ejs template
 app.set("view engine", "ejs");
 
+const dbName = "e-comm";
+
+async function getData() {
+  let result = await clint.connect();
+  console.log("Connected successfully to server");
+  let db = result.db(dbName);
+  let collection = db.collection("products");
+  let dbResponse = await collection.find({}).toArray();
+  console.log(dbResponse);
+}
+getData();
 // Creating basic middleware
 // const requestFilter = (req, resp, next) => {
 //   if (!req.query.age) {
