@@ -1,0 +1,156 @@
+/*
+
+$ mongo 
+MongoDB shell version v4.4.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d9d718d9-d5f3-410e-813b-6651d2924b7e") }
+MongoDB server version: 4.4.5
+---
+The server generated these startup warnings when booting:
+        2024-03-16T11:27:24.693+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use nodejs
+switched to db nodejs
+> db.createCollection("MyDB")
+{ "ok" : 1 }
+> show db
+uncaught exception: Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+> show dbs
+FruitsDB    0.000GB
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+nodejs      0.000GB
+shopDB      0.000GB
+todolistDB  0.000GB
+wikiDB      0.000GB
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+> show collections
+MyDB
+> db.createCollection("YourDB")
+{ "ok" : 1 }
+> show collections
+MyDB
+YourDB
+> db.YourDB.drop
+function(options = {}) {
+    const cmdObj = Object.assign({drop: this.getName()}, options);
+    ret = this._db.runCommand(cmdObj);
+    if (!ret.ok) {
+        if (ret.errmsg == "ns not found")
+            return false;
+        throw _getErrorWithCode(ret, "drop failed: " + tojson(ret));
+    }
+    return true;
+}
+> db.YourDB.drop()
+true
+> show collections
+MyDB
+> db
+nodejs
+> db.drop
+db.dropAllRoles(  db.dropAllUsers(  db.dropDatabase(  db.dropRole(      db.dropUser(
+> db.dropDatabase()
+{ "dropped" : "nodejs", "ok" : 1 }
+> db
+nodejs
+> exit
+bye
+
+rs240@LAPTOP-NBJGP4G5 MINGW64 ~/Documents/Web_Dev/Nodejs (main)
+$ mongo 
+MongoDB shell version v4.4.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("3d8e03e5-4f0e-4134-83c6-50ffaeaa02b4") }
+MongoDB server version: 4.4.5
+---
+The server generated these startup warnings when booting:
+        2024-03-16T11:27:24.693+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+FruitsDB    0.000GB
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+shopDB      0.000GB
+todolistDB  0.000GB
+wikiDB      0.000GB
+> db
+test
+> db
+test
+> show dbs
+FruitsDB    0.000GB
+admin       0.000GB
+config      0.000GB
+e-comm      0.000GB
+local       0.000GB
+shopDB      0.000GB
+todolistDB  0.000GB
+wikiDB      0.000GB
+> use e-comm
+switched to db e-comm
+> db
+e-comm
+> show collections
+products
+> db.pr
+db.printCollectionStats(           db.printSecondaryReplicationInfo(  db.printSlaveReplicationInfo(      db.propertyIsEnumerable
+db.printReplicationInfo(           db.printShardingStatus(            db.products                        db.prototype
+> db.products.createIndex
+db.products.createIndex(    db.products.createIndexes(
+> db.products.create?    
+... ^C
+
+> db.products.insertOne({name:"iPhone 15", brand:"Apple",price: 145000, category:"mobile"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6601a36328f5a047d1d072ab")
+}
+> db.products.insertOne({name:"S24", brand:"Samsung",price: 125000, category:"mobile"})    
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6601a3a528f5a047d1d072ac")
+}
+> db.products.find()                                                                       
+{ "_id" : ObjectId("6601a36328f5a047d1d072ab"), "name" : "iPhone 15", "brand" : "Apple", "price" : 145000, "category" : "mobile" }
+{ "_id" : ObjectId("6601a3a528f5a047d1d072ac"), "name" : "S24", "brand" : "Samsung", "price" : 125000, "category" : "mobile" }
+{ "_id" : ObjectId("6601a43d4294edb1b1028168"), "name" : "S23", "brand" : "Samsung", "price" : 120000, "category" : "mobile" }
+> db.products.deleteOne({name:"S23"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.products.find()
+{ "_id" : ObjectId("6601a36328f5a047d1d072ab"), "name" : "iPhone 15", "brand" : "Apple", "price" : 145000, "category" : "mobile" }
+{ "_id" : ObjectId("6601a3a528f5a047d1d072ac"), "name" : "S24", "brand" : "Samsung", "price" : 125000, "category" : "mobile" }
+>
+
+*/
