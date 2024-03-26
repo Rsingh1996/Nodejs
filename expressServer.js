@@ -14,15 +14,33 @@ app.set("view engine", "ejs");
 
 const dbName = "e-comm";
 
-async function getData() {
+async function dbConnection() {
   let result = await clint.connect();
   console.log("Connected successfully to server");
   let db = result.db(dbName);
-  let collection = db.collection("products");
-  let dbResponse = await collection.find({}).toArray();
-  console.log(dbResponse);
+  return db.collection("products");
+  //   let dbResponse = await collection.find({ brand: "Samsung" }).toArray();
+  //   console.log(dbResponse);
 }
-getData();
+
+// Reading data from DB using js promise
+
+// dbConnection().then((resp) => {
+//   resp
+//     .find()
+//     .toArray()
+//     .then((result) => console.log(result));
+// });
+
+// Reading data from DB using async await
+const main = async () => {
+  console.log("main function called");
+  let result = await dbConnection();
+  let data = await result.find().toArray();
+  console.log(data);
+};
+
+main();
 // Creating basic middleware
 // const requestFilter = (req, resp, next) => {
 //   if (!req.query.age) {
