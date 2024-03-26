@@ -1,27 +1,28 @@
 const express = require("express");
 const path = require("path");
 const requestFilter = require("./middleware");
-const { MongoClient } = require("mongodb");
-const url = "mongodb://localhost:27017";
+// const { MongoClient } = require("mongodb");
+// const url = "mongodb://localhost:27017";
 const PORT = 8000;
 const app = express();
 const publicPath = path.join(__dirname, "public");
 const route = express.Router();
+const dbConnection = require("./mongodb");
 
-const clint = new MongoClient(url);
+// const clint = new MongoClient(url);
 // initializing ejs template
 app.set("view engine", "ejs");
 
-const dbName = "e-comm";
+// const dbName = "e-comm";
 
-async function dbConnection() {
-  let result = await clint.connect();
-  console.log("Connected successfully to server");
-  let db = result.db(dbName);
-  return db.collection("products");
-  //   let dbResponse = await collection.find({ brand: "Samsung" }).toArray();
-  //   console.log(dbResponse);
-}
+// async function dbConnection() {
+//   let result = await clint.connect();
+//   console.log("Connected successfully to server");
+//   let db = result.db(dbName);
+//   return db.collection("products");
+//   //   let dbResponse = await collection.find({ brand: "Samsung" }).toArray();
+//   //   console.log(dbResponse);
+// }
 
 // Reading data from DB using js promise
 
