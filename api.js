@@ -1,5 +1,6 @@
 const express = require("express");
 const dbConnection = require("./mongodb");
+const mongodb = require("mongodb");
 
 const PORT = 5200;
 const app = express();
@@ -29,7 +30,15 @@ app.put("/:name", async (req, resp) => {
     { name: req.params.name },
     { $set: req.body }
   );
+  resp.send(result);
+});
 
+app.delete("/:id", async (req, resp) => {
+  console.log("DELETE API method called!");
+  let data = await dbConnection();
+  let result = await data.deleteOne({
+    _id: new mongodb.ObjectId(req.params.id),
+  });
   resp.send(result);
 });
 
