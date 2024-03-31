@@ -32,4 +32,11 @@ const updateDataInDB = async () => {
   );
   console.log(instance);
 };
-updateDataInDB();
+// updateDataInDB();
+
+const deletedDataInDB = async () => {
+  const ProductModel = new mongoose.model("products", ProductSchema);
+  const instance = await ProductModel.deleteOne({ name: "OnePlus 8T" });
+  console.log(instance);
+};
+deletedDataInDB();
