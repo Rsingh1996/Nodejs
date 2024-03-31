@@ -27,8 +27,8 @@ const addDataInDB = async () => {
 const updateDataInDB = async () => {
   const ProductModel = new mongoose.model("products", ProductSchema);
   const instance = await ProductModel.updateOne(
-    { name: "OnePlus 7T" },
-    { $set: { price: 90000, name: "OnePlus 8T" } }
+    { name: "OnePlus 8T" },
+    { $set: { price: 90000, name: "OnePlus 9T" } }
   );
   console.log(instance);
 };
