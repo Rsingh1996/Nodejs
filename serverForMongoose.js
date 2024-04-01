@@ -39,4 +39,11 @@ const deletedDataInDB = async () => {
   const instance = await ProductModel.deleteOne({ name: "OnePlus 8T" });
   console.log(instance);
 };
-deletedDataInDB();
+// deletedDataInDB();
+
+const findDataInDB = async () => {
+  const ProductModel = new mongoose.model("products", ProductSchema);
+  const instance = await ProductModel.find();
+  console.log(instance);
+};
+findDataInDB();
