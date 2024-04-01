@@ -43,7 +43,7 @@ const deletedDataInDB = async () => {
 
 const findDataInDB = async () => {
   const ProductModel = new mongoose.model("products", ProductSchema);
-  const instance = await ProductModel.find();
+  const instance = await ProductModel.find({ brand: "Apple" });
   console.log(instance);
 };
 findDataInDB();
