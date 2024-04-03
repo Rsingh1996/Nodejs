@@ -18,9 +18,18 @@ app.get("/list", async (request, response) => {
   let data = await Products.find();
   response.send(data);
 });
+
 app.delete("/delete/:_id", async (request, response) => {
   console.log("Delete API called!");
   let data = await Products.deleteOne(request.params);
+  response.send(data);
+});
+
+app.put("/update/:_id", async (request, response) => {
+  console.log("PUT API called!");
+  let data = await Products.updateOne(request.params, {
+    $set: request.body,
+  });
   response.send(data);
 });
 
