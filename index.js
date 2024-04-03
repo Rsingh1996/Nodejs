@@ -13,7 +13,14 @@ app.post("/create", async (request, response) => {
 });
 
 app.get("/list", async (request, response) => {
+  console.log("GET API called!");
+
   let data = await Products.find();
+  response.send(data);
+});
+app.delete("/delete/:_id", async (request, response) => {
+  console.log("Delete API called!");
+  let data = await Products.deleteOne(request.params);
   response.send(data);
 });
 
