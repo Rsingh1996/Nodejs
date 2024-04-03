@@ -12,4 +12,9 @@ app.post("/create", async (request, response) => {
   response.send(result);
 });
 
+app.get("/list", async (request, response) => {
+  let data = await Products.find();
+  response.send(data);
+});
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
